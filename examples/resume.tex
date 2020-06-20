@@ -15,13 +15,13 @@
 
 
 %-------------------------------------------------------------------------------
-% CONFIGURATIONS
+% CONFIGURATIONS 
 %-------------------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv}
+\documentclass[11pt, letterpaper]{awesome-cv}
 
 % Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\geometry{left=1.6cm, top=0.8cm, right=1.6cm, bottom=1.0cm, footskip=0.2cm}
 
 % Specify the location of the included fonts
 \fontdir[fonts/]
@@ -29,9 +29,11 @@
 % Color for highlights
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
 %                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-red}
+% \colorlet{awesome}{awesome-red}
 % Uncomment if you would like to specify your own color
-% \definecolor{awesome}{HTML}{CA63A8}
+\definecolor{awesome}{HTML}{f08d3a}
+\definecolor{secondary}{HTML}{1e374e}
+
 
 % Colors for text
 % Uncomment if you would like to specify your own color
@@ -39,6 +41,19 @@
 % \definecolor{text}{HTML}{333333}
 % \definecolor{graytext}{HTML}{5D5D5D}
 % \definecolor{lighttext}{HTML}{999999}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[overlay,remember picture]
+  \draw[secondary, line width=24pt]
+      ($ (current page.north west) + (12pt,0pt) $)
+      --
+      ($ (current page.south west) + (12pt,0pt) $);
+  \draw[primary, line width=6pt]
+      ($ (current page.north west) + (24pt,0pt) $)
+      --
+      ($ (current page.south west) + (24pt,0pt) $);
+  \end{tikzpicture}
+}
 
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{true}
@@ -52,16 +67,17 @@
 %	Comment any of the lines below if they are not required
 %-------------------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
-% \photo[rectangle,edge,right]{./examples/profile}
-\name{Byungjin}{Park}
-\position{Software Architect{\enskip\cdotp\enskip}Security Expert}
-\address{42-8, Bangbae-ro 15-gil, Seocho-gu, Seoul, 00681, Rep. of KOREA}
+% \photo[rectangle,noedge,right]{./profile.png}
+\name{Ali}{Niaki}
+% \position{Software Architect{\enskip\cdotp\enskip}Security Expert}
+% \position{Software + Security{\enskip\cdotp\enskip}Computer Security Graduate}
+\address{10 Leora Court, Richmond Hill, Ontario, Canada}
 
-\mobile{(+82) 10-9030-1843}
-\email{posquit0.bj@gmail.com}
-\homepage{www.posquit0.com}
-\github{posquit0}
-\linkedin{posquit0}
+\mobile{(+1) 647-964-1375}
+\email{niakicom@gmail.com}
+% \homepage{www.aliniaki.me}
+\github{saaniaki}
+\linkedin{saaniaki}
 % \gitlab{gitlab-id}
 % \stackoverflow{SO-id}{SO-name}
 % \twitter{@twit}
@@ -73,8 +89,10 @@
 % \googlescholar{googlescholar-id}{}
 % \extrainfo{extra informations}
 
-\quote{``Be the change that you want to see in the world."}
+% \quote{``Be the change that you want to see in the world."}
 
+% The company being applied to
+\setcompanynamewiths{Google's}
 
 %-------------------------------------------------------------------------------
 \begin{document}
@@ -87,7 +105,7 @@
 % Leave any of these blank if they are not needed
 \makecvfooter
   {\today}
-  {Byungjin Park~~~·~~~Résumé}
+  {Ali Niaki~~~·~~~Résumé}
   {\thepage}
 
 
@@ -96,13 +114,15 @@
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
 \input{resume/summary.tex}
-\input{resume/experience.tex}
-\input{resume/honors.tex}
-\input{resume/presentation.tex}
-\input{resume/writing.tex}
-\input{resume/committees.tex}
 \input{resume/education.tex}
-\input{resume/extracurricular.tex}
+\input{resume/experience.tex}
+% \input{resume/honors.tex}
+% \input{resume/presentation.tex}
+% \input{resume/writing.tex}
+% \input{resume/committees.tex}
+% \input{resume/extracurricular.tex}
+\input{cv/skills.tex}
+\input{resume/other.tex}
 
 
 %-------------------------------------------------------------------------------

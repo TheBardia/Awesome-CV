@@ -21,7 +21,7 @@
 \documentclass[11pt, a4paper]{awesome-cv}
 
 % Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\geometry{left=1.6cm, top=1.8cm, right=1.6cm, bottom=1.0cm, footskip=0.2cm}
 
 % Specify the location of the included fonts
 \fontdir[fonts/]
@@ -40,6 +40,19 @@
 % \definecolor{graytext}{HTML}{5D5D5D}
 % \definecolor{lighttext}{HTML}{999999}
 
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[overlay,remember picture]
+  \draw[secondary, line width=24pt]
+      ($ (current page.north west) + (0pt,-12pt) $)
+      --
+      ($ (current page.north east) + (0pt,-12pt) $);
+  \draw[primary, line width=6pt]
+      ($ (current page.north west) + (0pt,-24pt) $)
+      --
+      ($ (current page.north east) + (0pt,-24pt) $);
+  \end{tikzpicture}
+}
+
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{true}
 
@@ -52,16 +65,17 @@
 %	Comment any of the lines below if they are not required
 %-------------------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
-\photo[circle,noedge,left]{./examples/profile}
-\name{Claud D.}{Park}
-\position{Software Architect{\enskip\cdotp\enskip}Security Expert}
-\address{42-8, Bangbae-ro 15-gil, Seocho-gu, Seoul, 00681, Rep. of KOREA}
+% \photo[rectangle,noedge,right]{./profile.png}
+\name{Ali}{Niaki}
+% \position{Software Architect{\enskip\cdotp\enskip}Security Expert}
+% \position{Software + Security{\enskip\cdotp\enskip}Computer Security Graduate}
+\address{10 Leora Court, Richmond Hill, Ontario, Canada}
 
-\mobile{(+82) 10-9030-1843}
-\email{posquit0.bj@gmail.com}
-\homepage{www.posquit0.com}
-\github{posquit0}
-\linkedin{posquit0}
+\mobile{(+1) 647-964-1375}
+\email{niakicom@gmail.com}
+% \homepage{www.aliniaki.me}
+\github{saaniaki}
+\linkedin{saaniaki}
 % \gitlab{gitlab-id}
 % \stackoverflow{SO-id}{SO-name}
 % \twitter{@twit}
@@ -73,7 +87,7 @@
 % \googlescholar{googlescholar-id}{}
 % \extrainfo{extra informations}
 
-\quote{``Be the change that you want to see in the world."}
+% \quote{``Be the change that you want to see in the world."}
 
 
 %-------------------------------------------------------------------------------
@@ -84,16 +98,17 @@
 \recipient
   {Company Recruitment Team}
   {Google Inc.\\1600 Amphitheatre Parkway\\Mountain View, CA 94043}
+  {Google}
 % The date on the letter, default is the date of compilation
 \letterdate{\today}
 % The title of the letter
-\lettertitle{Job Application for Software Engineer}
+\lettertitle{Job Application for}{Software Engineer}
 % How the letter is opened
-\letteropening{Dear Mr./Ms./Dr. LastName,}
+\letteropening{ }
 % How the letter is closed
 \letterclosing{Sincerely,}
 % Any enclosures with the letter
-\letterenclosure[Attached]{Curriculum Vitae}
+\letterenclosure[Attached]{Résumé}
 
 
 %-------------------------------------------------------------------------------
@@ -107,7 +122,7 @@
 % Leave any of these blank if they are not needed
 \makecvfooter
   {\today}
-  {Claud D. Park~~~·~~~Cover Letter}
+  {Ali Niaki~~~·~~~Cover Letter}
   {}
 
 % Print the title with above letter informations
@@ -118,20 +133,24 @@
 %-------------------------------------------------------------------------------
 \begin{cvletter}
 
-\lettersection{About Me}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+  \begin{letterbodyen}
+    Dear Hiring Manager,
+    
+    % \lettersection{About Me}
+    As a young and motivated Computer Security graduate, I am very interested in architecting, designing and developing software that is robust and secure. Thus, I have been focusing on securing software using best security practices. While I was working in Scotiabank, I have created cryptography tools specifically for the cybersecurity team. Along the path, I have found my passion for crafting software and computer security details. I believe my strength is in being genuinely eager about knowing why something happened and planning to solve problems fundamentally.
 
-\lettersection{Why Google?}
-Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
+    % \lettersection{Why Google?}
+    Recently, I have co-founded an automotive service company and managed to develop a mini ERP and a PWA. My team members will continue with the project. I am, therefore looking for a full-time position to transitionfrom my current role. Crafting a security tool or architecting secure software both require a combination ofcomputer security knowledge and software development skills. Thus, I think I can be a good fit for the \putposition role in the security team at \putcompanyname.
 
-\lettersection{Why Me?}
-Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+    % \lettersection{Why Me?}
+    I am looking to work with a diverse group of talented professionals to architect, design and develop software that can help to make tomorrow better for your customers and my team members while improving my skills and grow in my career. Please review my resume since I believe that my motivation, commitment, and current skills will allow me to fit into your work environment and start supporting \putcompanyname.
 
-\end{cvletter}
-
-
+    I look forward to meeting with you and other members of the security team to discuss my suitability for this position further. I can be contacted at \putmobile.
+  \end{letterbodyen}
 %-------------------------------------------------------------------------------
 % Print the signature and enclosures with above letter informations
 \makeletterclosing
+
+\end{cvletter}
 
 \end{document}

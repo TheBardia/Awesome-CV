@@ -89,6 +89,11 @@
   pdfkeywords={}
 }
 
+\RequirePackage{tikz}
+\usetikzlibrary{calc}
+\RequirePackage{eso-pic}
+
+\RequirePackage{longfbox}
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
@@ -119,6 +124,19 @@
 %-------------------------------------------------------------------------------
 %                Configuration for colors
 %-------------------------------------------------------------------------------
+
+\newcommand*{\setprimarycolor}[1]{\def\@primarycolor{#1}}
+\newcommand*{\setsecondarycolor}[1]{\def\@secondarycolor{#1}}
+\newcommand*{\setimportantcolor}[1]{\def\@importantcolor{#1}}
+\setprimarycolor{f08d3a}
+\setsecondarycolor{22303d}
+\setimportantcolor{d88036}
+
+% Theme Colors
+\definecolor{primary}{HTML}{\@primarycolor}
+\definecolor{secondary}{HTML}{\@secondarycolor}
+\definecolor{important}{HTML}{\@importantcolor}
+
 % Gray-scale colors
 \definecolor{white}{HTML}{FFFFFF}
 \definecolor{black}{HTML}{000000}
@@ -147,13 +165,14 @@
 \definecolor{awesome-darknight}{HTML}{131A28}
 \colorlet{awesome}{awesome-red}
 
+
 % Boolean value to switch section color highlighting
 \newbool{acvSectionColorHighlight}
 \setbool{acvSectionColorHighlight}{true}
 
 % Awesome section color
-\def\@sectioncolor#1#2#3{%
-  \ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{#1#2#3}%
+\def\@sectioncolor#1{%
+  \ifbool{acvSectionColorHighlight}{{\fontsize{20pt}{1em}\bodyfont\bfseries\color{primary}#1}}{#1}%
 }
 
 
@@ -183,27 +202,30 @@
 \newcommand*{\bodyfont}{\sourcesanspro}
 \newcommand*{\bodyfontlight}{\sourcesansprolight}
 
+\newfontfamily{\allison}{allison-script.regular}[Path=\@fontdir, Extension = .otf]
+
 %-------------------------------------------------------------------------------
 %                Configuration for styles
 %-------------------------------------------------------------------------------
 % Configure styles for each CV elements
 % For fundamental structures
-\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
-\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
-\newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{awesome} #1}}
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{primary} #1}}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{secondary} #1}}
+\newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{text} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
-\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
+\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{secondary}\@sectioncolor #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
+\newcommand*{\importantstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\mdseries\color{important} #1}}
 
 % For elements of entry
-\newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{secondary} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{darktext} #1}}
+\newcommand*{\entrydatestyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\slshape\color{secondary} #1}}
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of subentry
@@ -227,12 +249,12 @@
 \newcommand*{\lettersectionstyle}[1]{{\fontsize{14pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
 \newcommand*{\recipientaddressstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\scshape\color{graytext} #1}}
 \newcommand*{\recipienttitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\lettertitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\bfseries\color{darktext} \underline{#1}}}
+\newcommand*{\lettertitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\bfseries\color{secondary} #1}}
 \newcommand*{\letterdatestyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\lettertextstyle}{\fontsize{10pt}{1.4em}\bodyfontlight\upshape\color{graytext}}
-\newcommand*{\letternamestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\letternamestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{secondary} #1}}
 \newcommand*{\letterenclosurestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{lighttext} #1}}
-
+\newcommand*{\signiturestyle}[1]{{\fontsize{32pt}{1em}\allison\color{primary} #1}}
 
 %-------------------------------------------------------------------------------
 %                Commands for personal information
@@ -350,13 +372,16 @@
 % Usage: \recipient{<recipient name>}{<recipient address>}
 % Usage: \recipientname{<recipient name>}
 % Usage: \recipientaddress{<recipient address>}
-\newcommand*{\recipient}[2]{\def\@recipientname{#1}\def\@recipientaddress{#2}}
+\newcommand*{\recipient}[3]{\def\@recipientname{#1}\def\@recipientaddress{#2}\def\@recipientshortname{#3}}
 \newcommand*{\recipientname}[1]{\def\@recipientname{#1}}
 \newcommand*{\recipientaddress}[1]{\def\@recipientaddress{#1}}
+\newcommand*{\recipientshortname}[1]{\def\@recipientshortname{#1}}
+
+\newcommand*{\setcompanynamewiths}[1]{\def\@companynamewiths{#1}}
 
 % Defines the title for letter (cover letter only, optional)
 % Usage: \lettertitle{<title>}
-\newcommand*{\lettertitle}[1]{\def\@lettertitle{#1}}
+\newcommand*{\lettertitle}[2]{\def\@lettertitle{#1}\def\@availableposition{#2}}
 
 % Defines the date for letter (cover letter only)
 % Usage: \letterdate{<date>}
@@ -564,7 +589,7 @@
   \vspace{\acvSectionTopSkip}
   \sectionstyle{#1}
   \phantomsection
-  \color{gray}\vhrulefill{0.9pt}
+  \color{secondary}\vhrulefill{0.9pt}
 }
 
 % Define a subsection for CV
@@ -681,6 +706,19 @@
   \vspace{-4.0mm}
 }
 
+% Define an environment for cvitems(for cventry)
+\newenvironment{cvsubitems}{%
+  \vspace{0.0mm}
+  \begin{justify}
+  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+    \setlength{\parskip}{0pt}
+    \renewcommand{\labelitemi}{\bullet}
+}{%
+  \end{itemize}
+  \end{justify}
+  \vspace{0.0mm}
+}
+
 
 %-------------------------------------------------------------------------------
 %                Commands for elements of Cover Letter
@@ -704,31 +742,75 @@
 % Define a title of the cover letter
 % Usage: \makelettertitle
 \newcommand*{\makelettertitle}{%
-  \vspace{8.4mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \recipienttitlestyle{\@recipientname} & \letterdatestyle{\@letterdate}
-  \end{tabular*}
-  \begin{singlespace}
-    \recipientaddressstyle{\@recipientaddress} \\\\
-  \end{singlespace}
+  % \vspace{8.4mm}
+  % \setlength\tabcolsep{0pt}
+  % \setlength{\extrarowheight}{0pt}
+  % \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+  %   \recipienttitlestyle{\@recipientname} & \letterdatestyle{\@letterdate}
+  % \end{tabular*}
+  % \begin{singlespace}
+  %   \recipientaddressstyle{\@recipientaddress} \\\\
+  % \end{singlespace}
   \ifthenelse{\isundefined{\@lettertitle}}
     {}
-    {\lettertitlestyle{\@lettertitle} \\}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.9cm} R{4.5cm}}
+      \lettertitlestyle{\@lettertitle\ \@availableposition} & \letterdatestyle{\@letterdate}
+    \end{tabular*}
+
+
   \lettertextstyle{\@letteropening}
 }
 
 % Define a closing of the cover letter
 % Usage: \makeletterclosing
 \newcommand*{\makeletterclosing}{%
-  \vspace{3.4mm}
-  \lettertextstyle{\@letterclosing} \\\\
-  \letternamestyle{\@firstname\ \@lastname}
-  \ifthenelse{\isundefined{\@letterenclosure}}
-    {\\}
-    {%
-      \\\\\\
-      \letterenclosurestyle{\@letterenclname: \@letterenclosure} \\
-    }
+    \begin{longfbox}[ 
+      border-width={0pt, 2pt, 0pt, 0pt},
+      border-right-color=\#\@secondarycolor
+    ]
+
+    \lettertextstyle{\@letterclosing} \\
+    \letternamestyle{\@firstname\ \@lastname}
+    \ifthenelse{\isundefined{\@letterenclosure}}
+
+    \begin{flushright}
+      \signiturestyle{saaniaki }
+    \end{flushright}
+
+    \end{longfbox}
+    % {\\}
+    % {%
+      % \\\\\\
+      % \letterenclosurestyle{\@letterenclname: \@letterenclosure} \\
+      
+    % }
 }
+
+\newcommand*{\putmobile}{%
+  \@mobile
+}
+
+\newcommand*{\putcompanyname}{%
+  \importantstyle{\@recipientshortname}
+}
+
+\newcommand*{\putposition}{%
+ \importantstyle{\@availableposition}
+}
+
+\newcommand*{\putcompanynamewiths}{%
+ {\@companynamewiths}
+}
+
+
+
+\newenvironment{letterbodyen}{%
+  \begin{longfbox}[ 
+    border-width={0pt, 0pt, 0pt, 1pt},
+    border-left-color=\#\@primarycolor
+  ]
+}{
+  \end{longfbox}
+}
+
+
