@@ -766,6 +766,9 @@
 \newcommand*{\makeletterclosing}{%
     \begin{longfbox}[ 
       border-width={0pt, 2pt, 0pt, 0pt},
+      border-top-color=\#FFFFFF,
+      border-bottom-color=\#FFFFFF,
+      border-left-color=\#FFFFFF,
       border-right-color=\#\@secondarycolor
     ]
 
@@ -790,12 +793,10 @@
   \@mobile
 }
 
-\newcommand*{\putcompanyname}{%
-  \importantstyle{\@recipientshortname}
-}
+\newcommand*{\putcompanyname}{\importantstyle{\@recipientshortname}}
 
-\newcommand*{\putposition}{%
- \importantstyle{\@availableposition}
+\newcommand*{\putposition}{
+  \importantstyle{\@availableposition}
 }
 
 \newcommand*{\putcompanynamewiths}{%
@@ -807,6 +808,9 @@
 \newenvironment{letterbodyen}{%
   \begin{longfbox}[ 
     border-width={0pt, 0pt, 0pt, 1pt},
+    border-top-color=\#FFFFFF,
+    border-bottom-color=\#FFFFFF,
+    border-right-color=\#FFFFFF,
     border-left-color=\#\@primarycolor
   ]
 }{
