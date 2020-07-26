@@ -130,11 +130,11 @@
 \newcommand*{\settitlewordcolor}[1]{\def\@titlewordcolor{#1}}
 \newcommand*{\settitlecolor}[1]{\def\@titlecolor{#1}}
 \newcommand*{\setimportantcolor}[1]{\def\@importantcolor{#1}}
-\setprimarycolor{f08d3a}
-\setsecondarycolor{22303d}
-\settitlewordcolor{f7c9a4}
-\settitlecolor{969ea3}
-\setimportantcolor{f27e1c}
+\setprimarycolor{85bc25}
+\setsecondarycolor{000000}
+\settitlewordcolor{98c794}
+\settitlecolor{878787}
+\setimportantcolor{26890d}
 
 % Theme Colors
 \definecolor{primary}{HTML}{\@primarycolor}
