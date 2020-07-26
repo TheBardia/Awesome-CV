@@ -21,7 +21,7 @@
 \documentclass[11pt, letterpaper]{awesome-cv}
 
 % Configure page margins with geometry
-\geometry{left=1.6cm, top=0.8cm, right=1.6cm, bottom=1.0cm, footskip=0.2cm}
+\geometry{left=1.6cm, top=0.3cm, right=1.6cm, bottom=0.6cm, footskip=0.1cm}
 
 % Specify the location of the included fonts
 \fontdir[fonts/]
@@ -104,9 +104,9 @@
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
 \makecvfooter
-  {\today}
+  {} % \thepage
   {Ali Niaki~~~·~~~Résumé}
-  {\thepage}
+  {\today}
 
 
 %-------------------------------------------------------------------------------
@@ -114,6 +114,7 @@
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
 \input{resume/summary.tex}
+\input{cv/skills.tex}
 \input{resume/education.tex}
 \input{resume/experience.tex}
 % \input{resume/honors.tex}
@@ -121,8 +122,8 @@
 % \input{resume/writing.tex}
 % \input{resume/committees.tex}
 % \input{resume/extracurricular.tex}
-\input{cv/skills.tex}
-\input{resume/other.tex}
+% \input{cv/skills.tex}
+% \input{resume/other.tex}
 
 
 %-------------------------------------------------------------------------------
