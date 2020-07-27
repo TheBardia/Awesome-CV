@@ -225,7 +225,7 @@
 \newcommand*{\sectionstyle}[1]{{\fontsize{15pt}{1em}\bodyfont\bfseries\color{titlec}\@sectioncolor #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
-\newcommand*{\importantstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\mdseries\color{important} #1}}
+\newcommand*{\importantstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{important} #1}}
 
 % For elements of entry
 \newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{secondary} #1}}
@@ -257,8 +257,8 @@
 \newcommand*{\recipienttitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\lettertitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\bfseries\color{secondary} #1}}
 \newcommand*{\letterdatestyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\lettertextstyle}{\fontsize{10pt}{1.4em}\bodyfontlight\upshape\color{graytext}}
-\newcommand*{\letternamestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{secondary} #1}}
+\newcommand*{\lettertextstyle}{\fontsize{9pt}{1.4em}\bodyfontlight\upshape\color{graytext}}
+\newcommand*{\letternamestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\upshape\color{graytext} #1}}
 \newcommand*{\letterenclosurestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{lighttext} #1}}
 \newcommand*{\signiturestyle}[1]{{\fontsize{32pt}{1em}\allison\color{primary} #1}}
 
