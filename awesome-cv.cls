@@ -127,14 +127,20 @@
 
 \newcommand*{\setprimarycolor}[1]{\def\@primarycolor{#1}}
 \newcommand*{\setsecondarycolor}[1]{\def\@secondarycolor{#1}}
+\newcommand*{\settitlewordcolor}[1]{\def\@titlewordcolor{#1}}
+\newcommand*{\settitlecolor}[1]{\def\@titlecolor{#1}}
 \newcommand*{\setimportantcolor}[1]{\def\@importantcolor{#1}}
-\setprimarycolor{f08d3a}
-\setsecondarycolor{22303d}
-\setimportantcolor{d88036}
+\setprimarycolor{ed1e22}
+\setsecondarycolor{333333}
+\settitlewordcolor{f57f91}
+\settitlecolor{878787}
+\setimportantcolor{960105}
 
 % Theme Colors
 \definecolor{primary}{HTML}{\@primarycolor}
 \definecolor{secondary}{HTML}{\@secondarycolor}
+\definecolor{titlew}{HTML}{\@titlewordcolor}
+\definecolor{titlec}{HTML}{\@titlecolor}
 \definecolor{important}{HTML}{\@importantcolor}
 
 % Gray-scale colors
@@ -172,7 +178,7 @@
 
 % Awesome section color
 \def\@sectioncolor#1{%
-  \ifbool{acvSectionColorHighlight}{{\fontsize{20pt}{1em}\bodyfont\bfseries\color{primary}#1}}{#1}%
+  \ifbool{acvSectionColorHighlight}{{\fontsize{20pt}{1em}\bodyfont\bfseries\color{titlew}#1}}{#1}%
 }
 
 
@@ -209,17 +215,17 @@
 %-------------------------------------------------------------------------------
 % Configure styles for each CV elements
 % For fundamental structures
-\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{primary} #1}}
-\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{secondary} #1}}
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{24pt}{1em}\headerfontlight\color{primary} #1}}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{24pt}{1em}\headerfont\bfseries\color{secondary} #1}}
 \newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{text} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
-\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{secondary}\@sectioncolor #1}}
+\newcommand*{\sectionstyle}[1]{{\fontsize{15pt}{1em}\bodyfont\bfseries\color{titlec}\@sectioncolor #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
-\newcommand*{\importantstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\mdseries\color{important} #1}}
+\newcommand*{\importantstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{important} #1}}
 
 % For elements of entry
 \newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{secondary} #1}}
@@ -229,9 +235,9 @@
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of subentry
-\newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
+\newcommand*{\subentrytitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 \newcommand*{\subentrypositionstyle}[1]{{\fontsize{7pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\subentrydatestyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\subentrydatestyle}[1]{{\fontsize{6.8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\subentrylocationstyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 \newcommand*{\subdescriptionstyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
@@ -251,8 +257,8 @@
 \newcommand*{\recipienttitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\lettertitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\bfseries\color{secondary} #1}}
 \newcommand*{\letterdatestyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\lettertextstyle}{\fontsize{10pt}{1.4em}\bodyfontlight\upshape\color{graytext}}
-\newcommand*{\letternamestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{secondary} #1}}
+\newcommand*{\lettertextstyle}{\fontsize{9pt}{1.4em}\bodyfontlight\upshape\color{graytext}}
+\newcommand*{\letternamestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\upshape\color{graytext} #1}}
 \newcommand*{\letterenclosurestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{lighttext} #1}}
 \newcommand*{\signiturestyle}[1]{{\fontsize{32pt}{1em}\allison\color{primary} #1}}
 
@@ -572,6 +578,7 @@
   \begin{minipage}[c]{\headerphotowidth}%
     \ifthenelse{\equal{\@photoalign}{right}}{\raggedleft\drawphoto}{}
   \end{minipage}
+  \vspace{2mm}
 }
 
 % Define a footer for CV
@@ -644,8 +651,8 @@
 \newcommand*{\cvsubentry}[4]{%
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \setlength\leftskip{0.2cm}
+  \begin{tabular*}{\textwidth - 2ex}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm - 2ex} R{4.5cm}}
+    % \setlength\leftskip{0.2cm}
     \subentrytitlestyle{#2} & \ifthenelse{\equal{#1}{}}
       {\subentrydatestyle{#3}}{}
     \ifthenelse{\equal{#1}{}}
@@ -706,7 +713,20 @@
   \vspace{-4.0mm}
 }
 
-% Define an environment for cvitems(for cventry)
+% Define an environment for summaryitems(for cventry)
+\newenvironment{summaryitems}{%
+  % \vspace{-4.0mm}
+  \begin{justify}
+  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+    \setlength{\parskip}{0pt}
+    \renewcommand{\labelitemi}{\bullet}
+}{%
+  \end{itemize}
+  \end{justify}
+  % \vspace{-4.0mm}
+}
+
+% Define an environment for cvsubitems(for cventry)
 \newenvironment{cvsubitems}{%
   \vspace{0.0mm}
   \begin{justify}
@@ -816,5 +836,3 @@
 }{
   \end{longfbox}
 }
-
-
