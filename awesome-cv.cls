@@ -131,10 +131,10 @@
 \newcommand*{\settitlecolor}[1]{\def\@titlecolor{#1}}
 \newcommand*{\setimportantcolor}[1]{\def\@importantcolor{#1}}
 \setprimarycolor{000756}
-\setsecondarycolor{333333}
-\settitlewordcolor{878787}
-\settitlecolor{878787}
-\setimportantcolor{000756}
+\setsecondarycolor{0f4c75}
+\settitlewordcolor{1b262c}
+\settitlecolor{1b262c}
+\setimportantcolor{3282b8}
 
 % Theme Colors
 \definecolor{primary}{HTML}{\@primarycolor}
@@ -146,8 +146,8 @@
 % Gray-scale colors
 \definecolor{white}{HTML}{FFFFFF}
 \definecolor{black}{HTML}{000000}
-\definecolor{darkgray}{HTML}{333333}
-\definecolor{gray}{HTML}{5D5D5D}
+\definecolor{darkgray}{HTML}{222222}
+\definecolor{gray}{HTML}{3282b8}
 \definecolor{lightgray}{HTML}{999999}
 % Basic colors
 \definecolor{green}{HTML}{C2E15F}
@@ -156,7 +156,7 @@
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
 % Text colors
-\definecolor{darktext}{HTML}{414141}
+\definecolor{darktext}{HTML}{3282b8}
 \colorlet{text}{darkgray}
 \colorlet{graytext}{gray}
 \colorlet{lighttext}{lightgray}
@@ -222,24 +222,24 @@
 \newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
-\newcommand*{\sectionstyle}[1]{{\fontsize{15pt}{1em}\bodyfont\bfseries\color{titlec}\@sectioncolor #1}}
+\newcommand*{\sectionstyle}[1]{{\fontsize{17pt}{1em}\bodyfont\bfseries\color{titlec}\@sectioncolor #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
-\newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
-\newcommand*{\importantstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\upshape\color{important} #1}}
+\newcommand*{\paragraphstyle}{\fontsize{10pt}{1.3em}\bodyfont\upshape\mdseries\color{text}}
+\newcommand*{\importantstyle}[1]{{\fontsize{10pt}{1.3em}\bodyfont\upshape\mdseries\color{important} #1}}
 
 % For elements of entry
-\newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{secondary} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\scshape\color{darktext} #1}}
-\newcommand*{\entrydatestyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\slshape\color{secondary} #1}}
-\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{12pt}{1.1em}\bodyfont\bfseries\color{secondary} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{11pt}{1.1em}\bodyfont\scshape\color{darktext} #1}}
+\newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1.1em}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1.1em}\bodyfont\slshape\color{secondary} #1}}
+\newcommand*{\descriptionstyle}[1]{{\fontsize{10pt}{1.3em}\bodyfont\upshape\mdseries\color{text} #1}}
 
 % For elements of subentry
-\newcommand*{\subentrytitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\subentrytitlestyle}[1]{{\fontsize{10pt}{1.3em}\bodyfont\upshape\mdseries\color{text} #1}}
 \newcommand*{\subentrypositionstyle}[1]{{\fontsize{7pt}{1em}\bodyfont\scshape\color{graytext} #1}}
 \newcommand*{\subentrydatestyle}[1]{{\fontsize{6.8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\subentrylocationstyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
-\newcommand*{\subdescriptionstyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\subdescriptionstyle}[1]{{\fontsize{10pt}{1.3em}\bodyfont\upshape\mdseries\color{text} #1}}
 
 % For elements of honor
 \newcommand*{\honortitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
@@ -248,8 +248,8 @@
 \newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 
 % For elements of skill
-\newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
+\newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1.3em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\skillsetstyle}[1]{{\fontsize{10pt}{1.3em}\bodyfont\upshape\mdseries\color{text} #1}}
 
 % For elements of the cover letter
 \newcommand*{\lettersectionstyle}[1]{{\fontsize{14pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
@@ -427,7 +427,7 @@
 
 % Others
 \newcommand{\acvSectionTopSkip}{0mm}
-\newcommand{\acvSectionContentTopSkip}{0.5mm}
+\newcommand{\acvSectionContentTopSkip}{2.5mm}
 
 
 %-------------------------------------------------------------------------------
@@ -651,7 +651,7 @@
 \newcommand*{\cvsubentry}[4]{%
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth - 2ex}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm - 2ex} R{4.5cm}}
+  \begin{tabular*}{\textwidth - 3ex}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm - 3ex} R{4.5cm}}
     % \setlength\leftskip{0.2cm}
     \subentrytitlestyle{#2} & \ifthenelse{\equal{#1}{}}
       {\subentrydatestyle{#3}}{}
@@ -684,15 +684,16 @@
 
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
-  \vspace{\acvSectionContentTopSkip}
-  \vspace{-2.0mm}
-  \begin{center}
-    \setlength\tabcolsep{1ex}
-    \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.9}}}
+  % \vspace{\acvSectionContentTopSkip}
+  % \vspace{-2.0mm}
+  \begin{justify}
+    \setlength\tabcolsep{2ex}
+    \setlength{\extrarowheight}{3pt}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} R{2cm} L{\textwidth - 2cm} }
+    % \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
 }{%
     \end{tabular*}
-  \end{center}
+  \end{justify}
 }
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
@@ -702,24 +703,25 @@
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
-  \vspace{-4.0mm}
+  \vspace{-3.0mm}
   \begin{justify}
-  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \begin{itemize}[leftmargin=3ex]
     \setlength{\parskip}{0pt}
-    \renewcommand{\labelitemi}{\bullet}
+    \setlength\itemsep{1.5mm}
+    \renewcommand{\labelitemi}{\raisebox{-.15\height}{\Large\bullet}}
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-4.0mm}
+  \vspace{-3.0mm}
 }
 
 % Define an environment for summaryitems(for cventry)
 \newenvironment{summaryitems}{%
   % \vspace{-4.0mm}
   % \begin{justify}
-  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \begin{itemize}[leftmargin=3ex]
     \setlength{\parskip}{0pt}
-    \renewcommand{\labelitemi}{\bullet}
+    \renewcommand{\labelitemi}{\raisebox{-.15\height}{\Large\bullet}}
 }{%
   \end{itemize}
   % \end{justify}
@@ -732,7 +734,7 @@
   \begin{justify}
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
     \setlength{\parskip}{0pt}
-    \renewcommand{\labelitemii}{\bullet}
+    \renewcommand{\labelitemii}{\textendash}
 }{%
   \end{itemize}
   \end{justify}
